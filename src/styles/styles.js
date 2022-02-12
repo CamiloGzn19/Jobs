@@ -7,6 +7,19 @@ export const General = styled.div`
   display: grid;
   grid-row-gap: 25px;
 `;
+
+export const Item = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 35px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px -7px rgba(93,164,164,0.5);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Tags = styled.button`
   display: inline-block;
   width: auto;

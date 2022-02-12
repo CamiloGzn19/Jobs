@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import "./style.css";
-import { General, Tags } from "../styles/styles";
+import { General, Item, Tags } from "../styles/styles";
 
 const url = "https://reto3-camilo.herokuapp.com/ofertas";
 
@@ -35,7 +35,7 @@ export default class JobList extends Component {
     if (this.state.vista === "search--hidden") {
       this.setState({ vista: "search" });
       this.setState({ buscador: (e.target.value)});
-    }
+    } 
   };
 
   borrarBtn = (e) => {
@@ -61,7 +61,7 @@ export default class JobList extends Component {
           {this.state.data.map((job) => {
             return (
               <General>
-                <div className="jobs_item" key={job.id}>
+                <Item className="jobs_item" key={job.id}>
                   <div className="jobs_column jobs_column--left">
                     <img
                       src={job.logo}
@@ -85,7 +85,7 @@ export default class JobList extends Component {
                     <Tags NameClass="tag" id="language" value={job.languages} onClick={this.buscarBtn}>{job.languages}</Tags>
                     <Tags NameClass="tag" id="tools" value={job.tools} onClick={this.buscarBtn}>{job.tools}</Tags>
                   </div>
-                </div>
+                </Item>
               </General>    
             );
           })}
